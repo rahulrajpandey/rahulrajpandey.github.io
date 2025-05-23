@@ -1,1 +1,37 @@
-node_modules
+# Ignore site output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignore local Ruby and Bundler environment
+.bundle/
+vendor/
+
+# Ignore OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*.tmp
+
+# Optional: log and temp files
+*.log
+*.gem
+*.pid
+tmp/
+
+# VSCode or IDE settings
+.vscode/
+.idea/
+
+# Node modules & lockfile (if using npm/yarn tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# RVM or rbenv
+.ruby-version
+
+# Test coverage
+coverage/
