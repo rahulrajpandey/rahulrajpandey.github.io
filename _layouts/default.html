@@ -7,7 +7,14 @@
 </head>
 <body>
   <header><h1><a href="/">{{ site.title }}</a></h1></header>
+
+
   <main>{{ content }}</main>
-  <footer><p>© {{ site.time | date: '%Y' }} Rahul Raj. Crafted with ❤️ and code.</p></footer>
+
+
+
+  <!-- Include the footer -->
+  {% include footer.html %}
+  
 </body>
 </html>
