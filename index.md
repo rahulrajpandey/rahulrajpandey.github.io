@@ -12,3 +12,4 @@ Links for quick access:
 - [Projects](/projects/)
 - [Archives](/archives/)
 - [Search](/search/)
+- [Search-Json-File] (/search.json)
