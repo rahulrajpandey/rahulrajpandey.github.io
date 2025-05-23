@@ -12,3 +12,13 @@ plugins:
   - jekyll-redirect-from
   - jekyll-optional-front-matter
   - jekyll-include-cache
+
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: archive
+  permalinks:
+    tag: '/tag/:name/'
+    category: '/category/:name/'
