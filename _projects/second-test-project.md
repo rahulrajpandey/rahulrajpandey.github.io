@@ -1,5 +1,5 @@
 ---
-title: "My First Project"
+title: "My Second Project"
 date: 2024-09-01
 description: "This is a dummy project to showcase how projects look."
 tags: [jekyll, portfolio, demo]

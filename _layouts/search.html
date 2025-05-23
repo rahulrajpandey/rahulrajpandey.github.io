@@ -3,7 +3,50 @@ layout: default
 ---
 
 <h1>Search</h1>
-<input type="text" id="search-input" placeholder="Search posts..." />
-<ul id="search-results"></ul>
 
-<script src="/assets/js/search.js"></script>
+<input type="text" id="search-input" placeholder="Search blog..." />
+<ul id="results-container"></ul>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.10.0/simple-jekyll-search.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/gh/christian-fei/Simple-Jekyll-Search@1.10.0/dist/simple-jekyll-search.min.js"></script> -->
+<script src="{{ '/assets/js/simple-jekyll-search.min.js' | relative_url }}"></script>
+
+
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: 'No results found',
+    limit: 10,
+  });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('search-input');
+  input.addEventListener('input', function () {
+    const query = input.value.toLowerCase();
+
+    fetch('/search.json')
+      .then(response => response.json())
+      .then(data => {
+        const results = data.filter(post =>
+          post.title.toLowerCase().includes(query) ||
+          post.content.toLowerCase().includes(query)
+        );
+
+        const resultsContainer = document.getElementById('search-results');
+        resultsContainer.innerHTML = '';
+
+        results.forEach(post => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${post.url}">${post.title}</a>`;
+          resultsContainer.appendChild(li);
+        });
+      });
+  });
+});
+
+
+</script>

@@ -22,3 +22,13 @@ jekyll-archives:
   permalinks:
     tag: '/tag/:name/'
     category: '/category/:name/'
+
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+permalink: /blog/:title/
+
+exclude: [vendor, node_modules]
