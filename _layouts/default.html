@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
-<body>
-  <header><h1><a href="/">{{ site.title }}</a></h1></header>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Include the header -->
+  {% include header.html %}
 
 
-  <main>{{ content }}</main>
+  <!-- Page content container -->
+  <main class="container mt-5 pt-5">
+    <div class="content-wrapper">
+      {{ content }}
+    </div>
+  </main>
 
 
 
   <!-- Include the footer -->
   {% include footer.html %}
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
 </body>
+
 </html>
