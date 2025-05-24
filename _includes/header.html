@@ -1,25 +1,25 @@
 <!-- Fixed Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="{{ '/' | relative_url }}">Rahul Raj</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link {% if page.url == '/' %}active{% endif %}"
-              href="{{ '/' | relative_url }}">Home</a></li>
-          <li class="nav-item"><a class="nav-link {% if page.url contains '/about/' %}active{% endif %}"
-              href="{{ '/about/' | relative_url }}">About</a></li>
-          <li class="nav-item"><a class="nav-link {% if page.url contains '/blog/' %}active{% endif %}"
-              href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li class="nav-item"><a class="nav-link {% if page.url contains '/projects/' %}active{% endif %}"
-              href="{{ '/projects/' | relative_url }}">Projects</a></li>
-          <li class="nav-item"><a class="nav-link {% if page.url contains '/archives/' %}active{% endif %}"
-              href="{{ '/archives/' | relative_url }}">Archives</a></li>
-          <li class="nav-item"><a class="nav-link {% if page.url contains '/search/' %}active{% endif %}"
-              href="{{ '/search/' | relative_url }}">Search</a></li>
-        </ul>
-      </div>
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">Rahul Raj</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link {% if page.url == '/' %}active{% endif %}"
+                        href="{{ '/' | relative_url }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link {% if page.url contains '/about/' %}active{% endif %}"
+                        href="{{ '/about/' | relative_url }}">About</a></li>
+                <li class="nav-item"><a class="nav-link {% if page.url contains '/blog/' %}active{% endif %}"
+                        href="{{ '/blog/' | relative_url }}">Blog</a></li>
+                <li class="nav-item"><a class="nav-link {% if page.url contains '/projects/' %}active{% endif %}"
+                        href="{{ '/projects/' | relative_url }}">Projects</a></li>
+                <li class="nav-item"><a class="nav-link {% if page.url contains '/archives/' %}active{% endif %}"
+                        href="{{ '/archives/' | relative_url }}">Archives</a></li>
+                <li class="nav-item"><a class="nav-link {% if page.url contains '/search/' %}active{% endif %}"
+                        href="{{ '/search/' | relative_url }}">Search</a></li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>

@@ -4,6 +4,7 @@ title: "My Second Test Blog Post"
 date: 2025-05-22
 tags: [tech, thoughts]
 ---
+
 I learnt that Jekyll requires blog post filenames to follow this format:
 
 YYYY-MM-DD-title-of-the-post.md

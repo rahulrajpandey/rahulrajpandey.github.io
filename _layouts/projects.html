@@ -6,13 +6,13 @@ layout: default
 
 <ul>
   {% for project in site.projects %}
-    <li>
-      <h2><a href="{{ project.link }}">{{ project.title }}</a></h2>
-      {% if project.image %}
-        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="width:200px;">
-      {% endif %}
-      <p>{{ project.description }}</p>
-      <p><small>{{ project.date | date: "%B %d, %Y" }}</small></p>
-    </li>
+  <li>
+    <h2><a href="{{ project.link }}">{{ project.title }}</a></h2>
+    {% if project.image %}
+    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="width:200px;">
+    {% endif %}
+    <p>{{ project.description }}</p>
+    <p><small>{{ project.date | date: "%B %d, %Y" }}</small></p>
+  </li>
   {% endfor %}
 </ul>

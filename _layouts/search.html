@@ -23,30 +23,30 @@ layout: default
   });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const input = document.getElementById('search-input');
-  input.addEventListener('input', function () {
-    const query = input.value.toLowerCase();
+  document.addEventListener('DOMContentLoaded', function () {
+    const input = document.getElementById('search-input');
+    input.addEventListener('input', function () {
+      const query = input.value.toLowerCase();
 
-    fetch('/search.json')
-      .then(response => response.json())
-      .then(data => {
-        const results = data.filter(post =>
-          post.title.toLowerCase().includes(query) ||
-          post.content.toLowerCase().includes(query)
-        );
+      fetch('/search.json')
+        .then(response => response.json())
+        .then(data => {
+          const results = data.filter(post =>
+            post.title.toLowerCase().includes(query) ||
+            post.content.toLowerCase().includes(query)
+          );
 
-        const resultsContainer = document.getElementById('search-results');
-        resultsContainer.innerHTML = '';
+          const resultsContainer = document.getElementById('search-results');
+          resultsContainer.innerHTML = '';
 
-        results.forEach(post => {
-          const li = document.createElement('li');
-          li.innerHTML = `<a href="${post.url}">${post.title}</a>`;
-          resultsContainer.appendChild(li);
+          results.forEach(post => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${post.url}">${post.title}</a>`;
+            resultsContainer.appendChild(li);
+          });
         });
-      });
+    });
   });
-});
 
 
 </script>
