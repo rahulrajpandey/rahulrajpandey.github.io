@@ -3,6 +3,8 @@ description: Digital Reflection of Me
 url: "https://rahulrajpandey.github.io"
 baseurl: "" 
 theme: null
+default_og_image: "/assets/images/og_default.png"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -22,7 +24,6 @@ jekyll-archives:
   permalinks:
     tag: '/tag/:name/'
     category: '/category/:name/'
-
 
 collections:
   projects:
