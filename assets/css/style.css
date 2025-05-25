@@ -3,10 +3,10 @@
   --bg-color: #ffffff;
   --text-color: #000000;
   --link-color: #007acc;
-  --footer-bg: #1f262e;
-  --footer-text-color: white;
-  --navbar-bg: #212529;
-  --navbar-text-color: #ffffff;
+  --footer-bg: #f8f9fa;
+  --footer-text-color: #212529;
+  --navbar-bg: #ffffff;
+  --navbar-text-color: #212529;
 }
 
 /* Dark Theme Overrides */
@@ -20,7 +20,7 @@ body[data-theme='dark'] {
   --navbar-text-color: #ffffff;
 }
 
-/* Base Styling */
+/* Base Page Styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0 auto;
@@ -34,18 +34,14 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.content-wrapper {
-  margin: 0 auto;
-  max-width: 700px;
-  line-height: 1.6;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
+/* Content Wrapper */
+.content-wrapper,
 main.container {
   margin: 2rem auto;
   max-width: 700px;
   line-height: 1.6;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* Links */
@@ -58,7 +54,43 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
+/* Navbar Styling */
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: var(--navbar-text-color) !important;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.navbar-custom {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text-color);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  border: none;
+  background: transparent;
+  color: var(--navbar-text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+#theme-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Footer Styling */
 footer {
   background: var(--footer-bg);
   padding: 1rem 0;
@@ -84,38 +116,7 @@ footer a:hover {
   color: var(--footer-text-color);
 }
 
-/* Navbar Override */
-.navbar {
-  background-color: var(--navbar-bg) !important;
-  transition: background-color 0.3s ease;
-}
-
-.navbar .nav-link,
-.navbar-brand {
-  color: var(--navbar-text-color) !important;
-  transition: color 0.3s ease;
-}
-
-.navbar .nav-link.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.navbar-custom {
-  background-color: var(--navbar-bg);
-  color: var(--navbar-text-color);
-}
-
-/* Optional: Toggle Button Styling */
-#theme-toggle {
-  border: none;
-  background: transparent;
-  color: var(--navbar-text-color);
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-}
-
-#theme-toggle:hover {
-  opacity: 0.8;
+/* Utility */
+.d-none {
+  display: none;
 }
