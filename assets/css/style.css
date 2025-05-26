@@ -22,24 +22,23 @@ body[data-theme='dark'] {
 
 /* Base Page Styling */
 body {
-  font-family: Arial, sans-serif;
+  /* max-width: 700px; */
   margin: 0 auto;
-  max-width: 700px;
-  line-height: 1.6;
   padding-top: 70px;
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  z-index: 0;
 }
 
+
 /* Content Wrapper */
-.content-wrapper,
-main.container {
-  margin: 2rem auto;
+.content-wrapper {
   max-width: 700px;
-  line-height: 1.6;
+  margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -119,4 +118,37 @@ footer a:hover {
 /* Utility */
 .d-none {
   display: none;
+}
+
+
+
+.category-section {
+  margin-bottom: 3rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.card a {
+  text-decoration: none;
+  color: #007acc;
+}
+
+.card a:hover {
+  text-decoration: underline;
 }

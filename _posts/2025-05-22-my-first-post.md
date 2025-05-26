@@ -1,8 +1,17 @@
 ---
 layout: post
-title: "My First Blog Post"
+title: "My First Test Post"
 date: 2025-05-22
-tags: [tech, thoughts]
+tags: [jekyll, personal-site, tech]
+categories: [tech, blogging]
+author: "Rahul Raj"
+
+description: "A step-by-step guide on building a minimal, themeable personal blog using Jekyll, including dark mode, SEO meta tags, and GitHub Pages hosting."
+
+image: "/assets/images/posts/how-i-built-blog-cover.png"  # 1200x630 preferred
+canonical_url: "https://rahulraj.dev/blog/how-i-built-my-blog"
+
+excerpt: "Curious how to build a sleek personal blog using Jekyll? Here's my experience from setup to deployment."
 ---
 
 This is my first blog post on this site!  
