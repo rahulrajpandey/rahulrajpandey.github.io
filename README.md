@@ -40,8 +40,8 @@ Make sure you have the following installed:
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/yourusername/your-website.git
-cd your-website
+git clone https://github.com/rahulrajpandey/rahulrajpandey.github.io.git
+cd rahulrajpandey.github.io
 
 # 2. Install dependencies
 bundle install
