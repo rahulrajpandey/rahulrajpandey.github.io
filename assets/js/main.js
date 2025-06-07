@@ -39,17 +39,20 @@ function initThemeToggle() {
  * Initialize navbar icon toggle (hamburger <-> cross)
  */
 function initNavbarToggleIcon() {
-  const navbarToggler = document.querySelector(".navbar-toggler");
-  const navbarIcon = document.getElementById("navbar-icon");
   const navbarCollapse = document.getElementById("navbarNav");
+  const hamburgerIcon = document.getElementById("navbar-icon-hamburger");
+  const closeIcon = document.getElementById("navbar-icon-close");
 
-  if (!navbarToggler || !navbarIcon || !navbarCollapse) return;
+  if (!navbarCollapse || !hamburgerIcon || !closeIcon) return;
 
   navbarCollapse.addEventListener("show.bs.collapse", () => {
-    navbarIcon.classList.replace("bi-list", "bi-x");
+    hamburgerIcon.style.display = "none";
+    closeIcon.style.display = "inline";
   });
 
   navbarCollapse.addEventListener("hide.bs.collapse", () => {
-    navbarIcon.classList.replace("bi-x", "bi-list");
+    hamburgerIcon.style.display = "inline";
+    closeIcon.style.display = "none";
   });
 }
+

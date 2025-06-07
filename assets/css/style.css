@@ -89,6 +89,30 @@ a:hover {
   color: var(--navbar-text-color);
 }
 
+#navbar-icon {
+  font-size: 1.5rem; /* For SVG, this might control the size */
+  color: white; /* Default color */
+}
+
+[data-theme="dark"] #navbar-icon {
+  color: white;
+}
+
+[data-theme="light"] #navbar-icon {
+  color: black;
+}
+
+/* Default icon styles */
+.navbar-toggler svg {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  color: black; /* default light mode color */
+}
+
+/* Dark mode: white icons */
+body[data-theme="dark"] .navbar-toggler svg {
+  color: white;
+}
 
 /* ================================
    Theme Toggle Button
