@@ -35,7 +35,7 @@ body[data-theme='dark'] {
 
 body {
   margin: 0 auto;
-  padding: 70px 1rem 0;
+  padding: 70px 0 0;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
