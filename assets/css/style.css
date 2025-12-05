@@ -13,6 +13,10 @@
 
   --footer-bg: #f8f9fa;
   --footer-text-color: #212529;
+  
+  --card-bg: #f9f9f9;
+  --card-text-color: #000000;
+  --card-link-color: #007acc;
 }
 
 /* Dark Theme */
@@ -26,6 +30,178 @@ body[data-theme='dark'] {
 
   --footer-bg: #1c1c1c;
   --footer-text-color: #eeeeee;
+  
+  --card-bg: #2a2a2a;
+  --card-text-color: #ffffff;
+  --card-link-color: #4ea8de;
+}
+
+
+/* ================================
+   Bootstrap Override (MUST BE FIRST)
+ ================================== */
+
+/* CRITICAL: Force theme colors to override Bootstrap defaults - HIGHEST SPECIFICITY */
+html, 
+html body,
+html body *,
+body,
+body *,
+body[data-theme],
+body[data-theme] *,
+body.theme-loaded,
+body.theme-loaded *,
+body[data-theme='light'],
+body[data-theme='light'] *,
+body[data-theme='dark'],
+body[data-theme='dark'] * {
+  background-color: inherit;
+}
+
+/* Explicitly set body background */
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Force main content to inherit theme colors */
+main, main *, 
+.content-wrapper, .content-wrapper * {
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Override Bootstrap's body background classes */
+.bg-white,
+.bg-light {
+  background-color: var(--bg-color) !important;
+}
+
+.bg-dark,
+.bg-primary,
+.bg-secondary,
+.bg-success,
+.bg-danger,
+.bg-warning,
+.bg-info {
+  background-color: var(--bg-color) !important;
+}
+
+/* Ensure main content area is transparent */
+main,
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl,
+.container-xxl,
+.mt-5,
+.pt-5 {
+  background-color: transparent !important;
+}
+
+/* Target main element specifically */
+main.mt-5.pt-5,
+main {
+  background-color: transparent !important;
+}
+
+/* Theme test element for debugging */
+.theme-test {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid var(--text-color);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Force all text content to use theme colors with ULTRA high specificity */
+body, body *, html, html * {
+  color: var(--text-color) !important;
+}
+
+/* Ensure content wrapper is truly transparent */
+.content-wrapper,
+.content-wrapper * {
+  background-color: transparent !important;
+}
+
+/* Force content to inherit theme colors */
+main,
+main * {
+  color: inherit;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Override Bootstrap text color classes */
+.text-dark,
+.text-black,
+.text-body,
+.text-muted {
+  color: var(--text-color) !important;
+}
+
+.text-white,
+.text-light {
+  color: var(--text-color) !important;
+}
+
+/* Force text content to use theme color */
+p, h1, h2, h3, h4, h5, h6, 
+span, div, article, section, 
+aside, header, footer, nav,
+ul, ol, li {
+  color: var(--text-color) !important;
+}
+
+/* Force blockquotes, code, pre to use theme colors */
+blockquote, code, pre, 
+pre *, code *, 
+kbd, samp {
+  color: var(--text-color) !important;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark theme adjustments for code blocks */
+body[data-theme='dark'] blockquote,
+body[data-theme='dark'] code,
+body[data-theme='dark'] pre {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure images work well with themes */
+img {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+body[data-theme='dark'] img {
+  opacity: 0.8;
+}
+
+/* Force table styling */
+table {
+  color: var(--text-color) !important;
+  background-color: transparent !important;
+}
+
+table th,
+table td {
+  color: var(--text-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+body[data-theme='dark'] table th,
+body[data-theme='dark'] table td {
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 
@@ -33,14 +209,37 @@ body[data-theme='dark'] {
    Base Layout
 ================================== */
 
+/* Prevent FOUC (Flash of Unstyled Content) */
+body[data-theme] {
+  visibility: hidden;
+}
+
+body[data-theme].theme-loaded {
+  visibility: visible;
+}
+
 body {
   margin: 0 auto;
   padding: 70px 0 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
   z-index: 0;
+}
+
+/* Force theme variables with higher specificity */
+html body,
+html body[data-theme],
+body[data-theme],
+body.theme-loaded {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Ensure content wrapper uses theme colors */
+.content-wrapper {
+  background-color: transparent !important;
 }
 
 .content-wrapper {
@@ -80,6 +279,7 @@ a:hover {
 }
 
 .navbar .nav-link.active {
+  color: var(--navbar-text-color) !important;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -177,19 +377,22 @@ footer a:hover {
 }
 
 .card {
-  background-color: #f9f9f9;
+  background-color: var(--card-bg);
+  color: var(--card-text-color);
   padding: 1rem 1.25rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .card h3 {
   margin-top: 0;
   font-size: 1.2rem;
+  color: var(--card-text-color);
 }
 
 .card a {
-  color: #007acc;
+  color: var(--card-link-color);
 }
 
 .card a:hover {
